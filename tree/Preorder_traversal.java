@@ -1,35 +1,3 @@
-LeetCode Logo
-Problem List
-5
-
-avatar
-All statuses
-All languages
-Accepted
-6 hours ago
-Java
-Close
-Praveen Chauhan
-Praveen Chauhan
-Nov 04, 2022 12:34
-
-Details
-Solution
-Java
-Runtime
-1 ms
-Beats
-49.93%
-Memory
-42 MB
-Beats
-64.1%
-Click to check the distribution chart
-Notes
-Write your notes here
-Related Tags
-Select tags
-0/5
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -59,7 +27,3 @@ class Solution {
         if(root.right!=null) traversal(root.right);
         }
 }
-Console
-
-Run
-Submit

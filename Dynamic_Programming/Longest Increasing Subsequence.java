@@ -1,4 +1,4 @@
-//////////////////////////////////// PRINTING THE LIS
+//////////////////////////////////////////////////////////// PRINTING THE LIS
 class Solution {
     public int lengthOfLIS(int[]arr) {   
         int n = arr.length; 
@@ -36,7 +36,7 @@ class Solution {
     return ans;
     }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////// FIND LENGTH USING MEMOIATION
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -54,7 +54,7 @@ class Solution {
     return dp[ind][prev_index+1] = Math.max(notTake, take);
     }
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////// FIND LENGTH USING TABULATION WITH SPACE OPTIMIZATION
 class Solution {
     public int lengthOfLIS(int[]arr) {
         int n = arr.length;
@@ -70,5 +70,27 @@ class Solution {
             curr = next.clone();
         }
         return curr[0];
+    }
+}
+///////////////////////////////////////////////////////////// FIND THE LENGTH USING ONLY ONE DP
+import java.util.*;
+
+public class printLIS {
+    public static void main(String[] args) {
+        int arr[] = { 0, 1, 0, 3, 2, 3 };
+        int n = arr.length;
+        int dp[] = new int[n];
+        Arrays.fill(dp, 1);
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            for (int pre = 0; pre < i; pre++) {
+                if (arr[pre] < arr[i] && dp[i] < dp[pre] + 1)
+                    dp[i] = 1 + dp[pre];
+            }
+            ans = Math.max(ans, dp[i]);
+        }
+        System.out.println(ans);
+        for (int ele : dp)
+            System.out.print(ele);
     }
 }
